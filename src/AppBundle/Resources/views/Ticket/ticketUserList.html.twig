@@ -1,0 +1,44 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% set page_title = 'My tickets' %}
+
+{% block content %}
+    {% if tickets %}
+        <table class="list">
+            <tr>
+                <th class="list">Created</th>
+                <th class="list">Priority</th>
+                <th class="list">Status</th>
+                <th class="list"></th>
+                <th class="list"></th>
+            </tr>
+
+            {% for ticket in tickets %}  
+                <tr>
+                        <td>
+                            {{ ticket.publishedAt |date('Y-m-d h:i:s')}}
+                        </td>
+                        <td>
+                            {{ ticket.priority }}
+                        </td>
+                        <td>
+                            {{ ticket.status }}
+                        </td>
+                        <td>
+                            <a href="{{ path('AppBundle_Ticket_ticket', {'ticketId': ticket.id}) }}">View</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('AppBundle_Ticket_ticketEdit', {'ticketId': ticket.id}) }}">Edit</a>
+                        </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+    {% else %}
+        <a class="button" href="{{ path('AppBundle_Ticket_ticketAdd') }}">
+        You have no tickets. Click here to change that!
+        </a>
+    {% endif %} 
+ 
+ {% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% set page_title = 'List of tickets' %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+        <h4>Status</h4>
+        {{ form_row(form.status) }}
+        <h4>Priority</h4>
+        {{ form_row(form.priority) }}
+        <input type="submit" value="Filter">
+    {{ form_end(form) }}
+
+    <table class="list">
+        <tr>
+            <th class="list">Author</th>
+            <th class="list">Created</th>
+            <th class="list">Priority</th>
+            <th class="list">Status</th>
+            <th class="list"></th>
+        </tr>
+
+        {% for ticket in tickets %}
+            
+            <tr>
+                    <td>
+                        {{ ticket.ticketAuthor.getUsername }}
+                    </td>
+                    <td>
+                        {{ ticket.publishedAt |date('Y-m-d h:i:s')}}
+                    </td>
+                    <td>
+                        {{ ticket.priority }}
+                    </td>
+                    <td>
+                        {{ ticket.status }}
+                    </td>
+                    <td>
+                        <a href="{{ path('AppBundle_Ticket_ticket', {'ticketId': ticket.id}) }}">View</a>
+                    </td>
+            </tr>
+            
+         {% else %}
+             No tickets found.
+         {% endfor %}
+ 
+ {% endblock content %}

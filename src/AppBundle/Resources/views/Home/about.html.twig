@@ -1,0 +1,31 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% set page_title = 'About' %}
+
+{% block content %}
+	<div class="main">
+		<h1>Informacije o projektu</h1>
+		<p>
+		Tema ovog projekta je izrada takozvanog "ticketing" sustava. Taj sustav omogućava registriranim korisnicima da izrade radni nalog.
+		Radni nalog ima sadržaj, autora, vrijeme izrade, prioritet i status.
+		</p>
+		<p>
+		Zamišljeno je da korisnici mogu mijenjati status, prioritet i sadržaj svakog naloga. Također, korisnici
+		imaju mogućnost komentiranja naloga. Imaju uvid u svoje radne naloge.
+		</p>
+		<p>
+		Samo administrator ima mogućnost brisanja naloga.
+		</p>
+		<p>
+		Posjetitelji ove stranice koji nisu ulogirani imaju mogućnost vidjeti naslovnu stranicu, kao i ovu. Nemaju mogućnost
+		vidjeti popis naloga, stvarati novi nalog i komentirati naloge.
+		</p>
+		<p>
+		Nakon registracije, korisnici će dobit email potvrde registracije. Ulogirani korisnici nemaju mogućnost registracije.
+		</p>
+		<p>
+		Administrator stranice ima uvid u sve korisnike i ima pravo obrisati korisnika. Obrisanom korisniku se šalje obavijest.
+		</p>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/ticketingSystem.css') }}">
+{% endblock %}
+
+{% block title %}
+{% if page_title is defined %} {{ page_title }} | {% endif %} PHP Ivana
+{% endblock %}
+
+{% block body %}
+    <header>
+
+    </header>
+    <body>
+        <ul class="topnav">
+          <li>
+            <a href="{{ path('AppBundle_Home_homepage') }}">Home</a>
+          </li>
+          <li>
+            <a href="{{ path('AppBundle_Home_about') }}">About</a>
+          </li>
+          <li>
+            <a href="{{ path('AppBundle_Ticket_ticketList') }}">Tickets</a>
+          </li>
+          <li>
+            <a href="{{ path('AppBundle_Ticket_ticketAdd') }}">Add a ticket</a>
+          </li>
+          {% if is_granted('ROLE_ADMIN') %}
+            <li>
+              <a href="{{ path('AppBundle_User_userList') }}">Users</a>
+            </li>
+          {% endif %}
+
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li style="float:right">
+              <a href="{{ path('logout') }}">Logout</a>
+            </li>
+            <li style="float:right">
+              <a href="{{ path('AppBundle_Ticket_ticketUserList', { 'userId': app.user.id }) }}">My tickets</a>
+            </li>
+          {% else %}
+            <li style="float:right">
+              <a href="{{ path('AppBundle_Registration_register') }}">Register</a>
+            </li>
+            <li style="float:right">
+              <a href="{{ path('AppBundle_Security_login') }}">Login</a>
+            </li>
+          {% endif %}
+
+        </ul>
+    </body>
+
+    {% block content %}
+    {% endblock %}
+
+  <footer>
+  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div class="ftext"> You are logged in as {{ app.user.username }} </div>
+  {% endif %}
+  </footer>
+{% endblock %}

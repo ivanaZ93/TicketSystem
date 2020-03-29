@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: phpacademy
+    database_port: 3306
+    database_name: project_iz
+    database_user: ivana.zaper
+    database_password: T/bAS0NXNvk=
+    secret: ThisTokenIsNotSoSecretChangeIt
+    mailer_transport: smtp
+    mailer_host: phpacademy
+    mailer_user: null
+    mailer_password: null
+    mailer_port: 1025

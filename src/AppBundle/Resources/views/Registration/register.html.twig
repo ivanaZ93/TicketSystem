@@ -1,0 +1,16 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% set page_title = 'Register' %}
+
+{% block content %}
+{{ form_start(form) }}
+	{{ form_row(form.name) }}
+    {{ form_row(form.surname) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword.first) }}
+    {{ form_row(form.plainPassword.second) }}
+
+    <input type="submit" value="register"/>
+{{ form_end(form) }}
+{% endblock content %}

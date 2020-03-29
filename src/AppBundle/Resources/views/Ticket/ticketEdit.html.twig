@@ -1,0 +1,13 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% set page_title = 'Edit ticket' %}
+
+{% block content %}
+    <h1>Edit this ticket</h1>
+    {{ ticket.ticketAuthor.username }} </br>
+    Published at: {{ ticket.publishedAt |date('Y-m-d h:i:s')}}
+    {{ form_start(form, { attr: attr|default({}) }) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Update">
+    {{ form_end(form) }}
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% set page_title = 'List' %}
+
+{% block content %}
+    <table class="list">
+        <tr>
+            <th class="list">Username</th>
+            <th class="list">Name</th>
+            <th class="list">Surname</th>
+            <th class="list">Email</th>
+            <th class="list"></th>
+        </tr>
+
+        {% for user in users %}
+            {% if user.username != "Admin" %}    
+            <tr>
+                    <td>
+                        {{ user.getUsername }}
+                    </td>
+                    <td>
+                        {{ user.getName }}
+                    </td>
+                    <td>
+                        {{ user.getSurname }}
+                    </td>
+                    <td>
+                        {{ user.getEmail }}
+                    </td>
+                    <td>
+                        <a href="{{ path('AppBundle_User_userDelete', {'userId': user.id}) }}">Delete this user</a>
+                    </td>
+            </tr>
+            {% endif %}
+         {% else %}
+            You are the only user.
+         {% endfor %}
+ 
+ {% endblock content %}
