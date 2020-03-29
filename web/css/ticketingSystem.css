@@ -1,0 +1,227 @@
+body {
+  background-image: url("img.jpg");
+  background-size: 100%;
+	margin: 0;
+  margin-bottom: 50px;
+	padding: 0;
+	font-family: "Open sans";
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+}
+
+a.button {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 30%;
+  display: block;
+  width: 40%;
+  border: 5px solid rgba(255,105,180, 0.1);
+  background-color: rgba(255,105,180, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 1.4em;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: normal;
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 35px;
+	text-align: center;
+}
+
+h4 {
+	margin: 10px 0;
+}
+
+main {
+	text-align: center;
+}
+
+p {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: x-large;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width:100%;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: rgb(255,20,147);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+a {
+	text-decoration: none;
+	color: rgb(255,20,147);
+}
+
+form {
+	clear: both;
+	width: 30%;
+	margin: 35px auto;
+	padding: 25px;
+	background: #fff;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+}
+
+header {
+	padding: initial;
+	background: rgb(220,220,220);
+}
+
+header h2 {
+	display: inline-block;
+	margin: 0;
+	float: right;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text], 
+input[type=password], 
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=button], 
+input[type=submit] {
+  background-color: rgb(255,20,147);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+label {
+	display: block;
+	margin-right: 15px;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: left;
+	vertical-align: middle;
+	color: #999;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, 
+td {
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2
+}
+
+th.list {
+  background-color: rgb(255,20,147);
+  color: white;
+}
+
+table.ticket {
+  border-collapse: collapse;
+  width: 60%;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  position: initial;
+}
+
+th.ticket {
+  background-color: rgb(255,20,147);
+  color: white;
+  max-width: 30%;
+}
+
+table.comment {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 30%;
+  display: block;
+  width: 40%;
+  border: 5px solid rgba(100, 0, 100, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 1.4em;
+}
+
+footer {
+  background: none repeat scroll 0 0;
+  background-image: url("back.png");
+  width: 100%;
+  font-size: 20px;
+  position:fixed;
+  bottom:0;
+}
+
+footer .ftext{
+  float: initial;
+  color: white;
+}
